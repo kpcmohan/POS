@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BannerTableViewCell" id="aIg-fM-7Ef" customClass="BannerTableViewCell" customModule="POS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aIg-fM-7Ef" id="DDo-qO-C3Q">
+                <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="iRI-Hn-613">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="200"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="ObI-Hq-kVU">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hfl-Pl-Vvq">
+                        <rect key="frame" x="203" y="200" width="44.5" height="0.0"/>
+                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="currentPageIndicatorTintColor" red="0.19572520260000001" green="0.26591444019999999" blue="0.6892357469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </pageControl>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Hfl-Pl-Vvq" firstAttribute="top" secondItem="iRI-Hn-613" secondAttribute="bottom" id="3od-Ei-ygx"/>
+                    <constraint firstAttribute="bottom" secondItem="Hfl-Pl-Vvq" secondAttribute="bottom" id="HRy-Ql-9zS"/>
+                    <constraint firstItem="Hfl-Pl-Vvq" firstAttribute="centerX" secondItem="DDo-qO-C3Q" secondAttribute="centerX" id="IIp-aC-Xpb"/>
+                    <constraint firstAttribute="trailing" secondItem="iRI-Hn-613" secondAttribute="trailing" id="Jsi-hT-zgU"/>
+                    <constraint firstItem="iRI-Hn-613" firstAttribute="leading" secondItem="DDo-qO-C3Q" secondAttribute="leading" id="MvD-me-Keb"/>
+                    <constraint firstItem="iRI-Hn-613" firstAttribute="top" secondItem="DDo-qO-C3Q" secondAttribute="top" id="ZX8-72-CMl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="bannerCollectionView" destination="iRI-Hn-613" id="h9w-hx-84d"/>
+                <outlet property="pageController" destination="Hfl-Pl-Vvq" id="EYF-AA-4se"/>
+            </connections>
+            <point key="canvasLocation" x="157.97101449275362" y="-23.4375"/>
+        </tableViewCell>
+    </objects>
+</document>
