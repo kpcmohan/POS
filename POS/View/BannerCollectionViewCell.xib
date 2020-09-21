@@ -20,16 +20,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="489" height="164"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="htT-MD-JcJ">
-                                <rect key="frame" x="10" y="0.0" width="469" height="164"/>
+                                <rect key="frame" x="10" y="5" width="469" height="154"/>
                                 <color key="backgroundColor" red="0.19572520260000001" green="0.26591444019999999" blue="0.6892357469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="htT-MD-JcJ" firstAttribute="leading" secondItem="oBo-kk-yDG" secondAttribute="leading" constant="10" id="6Dr-00-KCk"/>
                             <constraint firstAttribute="trailing" secondItem="htT-MD-JcJ" secondAttribute="trailing" constant="10" id="HJF-t8-6CI"/>
-                            <constraint firstAttribute="bottom" secondItem="htT-MD-JcJ" secondAttribute="bottom" id="pJL-Sp-wVH"/>
-                            <constraint firstItem="htT-MD-JcJ" firstAttribute="top" secondItem="oBo-kk-yDG" secondAttribute="top" id="wy7-ls-pXk"/>
+                            <constraint firstAttribute="bottom" secondItem="htT-MD-JcJ" secondAttribute="bottom" constant="5" id="pJL-Sp-wVH"/>
+                            <constraint firstItem="htT-MD-JcJ" firstAttribute="top" secondItem="oBo-kk-yDG" secondAttribute="top" constant="5" id="wy7-ls-pXk"/>
                         </constraints>
                     </view>
                 </subviews>

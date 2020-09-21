@@ -26,6 +26,9 @@ class HomeViewController: UIViewController {
     }
     func registerTableViewCells() {
         homeTableView.register(UINib(nibName: "BannerTableViewCell", bundle: nil), forCellReuseIdentifier: "BannerTableViewCell")
+        homeTableView.register(UINib(nibName: "CategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoriesTableViewCell")
+        homeTableView.register(UINib(nibName: "ProductsTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductsTableViewCell")
+        
     }
     func configureSubView() {
         homeTableView.tableFooterView = UIView()
@@ -49,15 +52,45 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return [allData?.banners,allData?.categories,allData?.fresh_products,allData?.ProductsForYou].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BannerTableViewCell") as! BannerTableViewCell
-        cell.bannerData = allData?.banners
-        return cell
+        switch indexPath.row{
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BannerTableViewCell") as! BannerTableViewCell
+            cell.bannerData = allData?.banners
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesTableViewCell") as! CategoriesTableViewCell
+            cell.categories = allData?.categories
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProductsTableViewCell") as! ProductsTableViewCell
+            cell.products = allData?.fresh_products
+            cell.titleLabel.text = "Fresh Items"
+            return cell
+        default:
+            guard (allData?.ProductsForYou?.count ?? 0) > 0 else {
+                return UITableViewCell()
+            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProductsTableViewCell") as! ProductsTableViewCell
+            cell.products = allData?.ProductsForYou
+            cell.titleLabel.text = "Items for you"
+            return cell
+        
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.size.height * 0.3
+        switch indexPath.row{
+        case 0:
+            return self.view.frame.size.height * 0.35
+        case 1:
+            return 240
+        case 2:
+            return 480
+        default:
+            return 140
+        }
     }
 }
 

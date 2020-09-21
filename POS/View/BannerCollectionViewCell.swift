@@ -13,7 +13,8 @@ class BannerCollectionViewCell: UICollectionViewCell {
     
     var imageUrl : String?{
         willSet{
-            let imageURL = URL(string: newValue ?? "")
+            let urlString = newValue?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            let imageURL = URL(string: urlString ?? "")
             imageView.kf.setImage(with: imageURL)
         }
     }
@@ -21,5 +22,4 @@ class BannerCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

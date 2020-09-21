@@ -12,6 +12,7 @@ struct AllData : Codable{
     var banners: [Banner]?
     var categories: [Category]?
     var fresh_products: [FreshProduct]?
+    var ProductsForYou: [FreshProduct]?
 }
 
 // MARK: - Banner
@@ -30,10 +31,10 @@ struct Category : Codable{
 
 // MARK: - FreshProduct
 struct FreshProduct : Codable{
-    var product_id, name, /*description*/ model: String?
+    var product_id, name, description, model: String?
     var quantity, sku, vsn, tax: String?
     var stock_status: String?
-    //var image: String?
+    var image: String?
     var delivery_charge, manufacturer_id, manufacturer, price: String?
     var discount, date_available, sort_order, status: String?
 }
